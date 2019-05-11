@@ -1,4 +1,4 @@
-# Leet Height Limit
+# Easy Height Limit
 Stop people placing blocks at a certain height in chosen worlds.
 
 ## Commands
