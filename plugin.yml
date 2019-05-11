@@ -1,0 +1,37 @@
+name: EasyHeightLimit
+main: ElementalMinecraftGaming\EasyHeightLimit\Main
+version: 1.0.0
+api: [3.6.1]
+depend: [MultiWorld]
+load: POSTWORLD
+author: ElementalMinecraftGaming
+description: Set the world height limit!
+
+commands:
+ heightlimit:
+  description: Set height limit!
+  permission: edit.hlimit
+  aliases: [ehl]
+ disableheightlimit:
+  description: disable height for a world!
+  usage: "/disableheightlimit {world}"
+  permission: edit.dhlimit
+  aliases: [edhl]
+ heightlimithelp:
+  description: Check height limit commands!
+  permission: hlimit.help
+  aliases: [limithh]
+
+permissions:
+  edit.hlimit:
+    default: op
+    description: Let's you edit height limit
+  edit.dhlimit:
+    default: op
+    description: Let's you delete height limit
+  hlimit.help:
+    default: true
+    description: Let's you see height limit commands
+  hlimit.bypass:
+    default: op
+    description: Let's you bypass height limit
