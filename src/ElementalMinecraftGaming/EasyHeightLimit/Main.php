@@ -32,8 +32,8 @@ class Main extends PluginBase implements Listener {
         $user = $event->getPlayer();
         $lvl = $user->getLevel()->getFolderName();
         $block = $event->getBlock();
-        $config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
-        $data = $config->get($lvl);
+        
+        $data = $this->config->get($lvl);
         $y = $block->y;
         if (isset($data)) {
             if (is_array($data)) {
@@ -60,9 +60,9 @@ class Main extends PluginBase implements Listener {
                         $sender->sendMessage(TextFormat::GREEN . "Setting limit");
                         $worldd = $args[1];
                         $y = $args[0];
-                        $config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
-                        $config->set($worldd, [$y]);
-                        $config->save();
+                        
+                        $this->config->set($worldd, [$y]);
+                        $this->config->save();
                         $sender->sendMessage(TextFormat::GREEN . "Set!");
                         return true;
                         } else {
@@ -99,8 +99,8 @@ class Main extends PluginBase implements Listener {
                 if ($sender instanceof Player) {
                     if (isset($args[0])) {
                         $world = $args[0];
-                        $config = new Config($this->getDataFolder() . "config.yml", Config::YAML);
-                        unset($config->$world);
+                        
+                        unset($this->config->$world);
                         $this->config->save(true);
                         $sender->sendMessage(TextFormat::GREEN . "Deleted $world height limit! ");
                         return true;
