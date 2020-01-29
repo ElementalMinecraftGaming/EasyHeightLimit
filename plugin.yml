@@ -1,8 +1,7 @@
 name: EasyHeightLimit
 main: ElementalMinecraftGaming\EasyHeightLimit\Main
 version: 1.0.0
-api: [3.6.1]
-depend: [MultiWorld]
+api: [3.11.4]
 load: POSTWORLD
 author: ElementalMinecraftGaming
 description: Set the world height limit!
